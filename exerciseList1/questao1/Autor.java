@@ -1,6 +1,7 @@
 package exerciseList1.questao1;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Autor {
     private String name;
@@ -17,10 +18,23 @@ public class Autor {
     }
 
     public void addBook(Livro book){
-        this.bookList.add(book);
+        if(!(bookList.contains(book))){
+            this.bookList.add(book);
+        }
     }
 
     public ArrayList<Livro> getBookList() {
         return bookList;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        Autor autor = (Autor) o;
+        return Objects.equals(this.name, autor.name);
+    }
+
 }
