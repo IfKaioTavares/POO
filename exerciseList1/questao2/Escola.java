@@ -1,28 +1,51 @@
 package exerciseList1.questao2;
-
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Objects;
 
 public class Escola {
     private String name;
-    private List<Turma> turmas = new ArrayList<>();
-    private List<Professor> professores = new ArrayList<>();
+    private String id;
+    private ArrayList<Turma> classList = new ArrayList<Turma>();
 
-    public Escola(String name){
-        this.name = name;
+    public Escola(String schoolName, String id){
+        this.name = schoolName;
+        this.id = id;
     }
-
-    public void addTurma(Turma newTurma){
-        if(!BuscaUtil.existTurma(this.turmas, newTurma)){
-            this.turmas.add(newTurma);
+    public void addClass(Turma newClass){
+        if(!this.classList.contains(newClass)){
+            this.classList.add(newClass);
         }
     }
-
-    public void addProfessor(Professor newProfessor){
-        if(!BuscaUtil.existProfessor(this.professores, newProfessor)){
-            this.professores.add(newProfessor);
-        }
+    public String getName() {
+        return name;
+    }
+    public String getId() {
+        return id;
     }
 
-    
+    public ArrayList<Turma> findClassesByTeacher(Professor teacher){
+        for (Turma turma: this.classList){
+            for (Professor professor: turma.getTeachersList()){
+                if(professor.equals(teacher)){
+                    return teacher.getClassList();
+                }
+            }
+        }
+        return null;
+    }
+
+    public ArrayList<Aluno> findStudentsByClass(Turma turma){
+        for(Turma t: this.classList){
+            if(t.equals(turma)){
+                return  turma.getStudentsList();
+            }
+        }
+        return null;
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Escola escola)) return false;
+        return Objects.equals(getName(), escola.getName()) && Objects.equals(getId(), escola.getId());
+    }
 }

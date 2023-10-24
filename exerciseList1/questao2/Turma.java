@@ -1,34 +1,50 @@
 package exerciseList1.questao2;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Objects;
 
 public class Turma {
     private String name;
-    private List<Aluno> alunos = new ArrayList<>();
-    private List<Professor> professores = new ArrayList<>();
+    private ArrayList<Aluno> studentsList = new ArrayList<Aluno>();
+    private ArrayList<Professor> teachersList = new ArrayList<Professor>();
 
-    public Turma(String name){
-        this.name = name;
+    public Turma(String className){
+        this.name = className;
     }
-
+    public void addStudent(Aluno newStudent){
+        if(!this.studentsList.contains(newStudent)){
+            this.studentsList.add(newStudent);
+            newStudent.getInClass(this);
+        }
+    }
+    public void addTeacher(Professor newTeacher){
+        if(!this.teachersList.contains(newTeacher)){
+            this.teachersList.add(newTeacher);
+            newTeacher.getInClass(this);
+        }
+    }
     public String getName() {
         return name;
     }
-    public void addAluno(Aluno newAluno) {
-        this.alunos.add(newAluno);
+    public ArrayList<Aluno> getStudentsList() {
+        return studentsList;
+    }
+    public ArrayList<Professor> getTeachersList() {
+        return teachersList;
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Turma turma)) return false;
+        return Objects.equals(getName(), turma.getName()) && Objects.equals(getStudentsList(), turma.getStudentsList()) && Objects.equals(getTeachersList(), turma.getTeachersList());
     }
 
-    public void addProfessor(Professor newProfessor) {
-        this.professores.add(newProfessor);
-        newProfessor.addTurma(this);
-    }
-
-    public List<Aluno> getAlunos() {
-        return alunos;
-    }
-
-    public List<Professor> getProfessores() {
-        return professores;
+    @Override
+    public String toString() {
+        return "Turma{" +
+                "name='" + name + '\'' +
+                ", studentsList=" + studentsList +
+                ", teachersList=" + teachersList +
+                '}';
     }
 }
