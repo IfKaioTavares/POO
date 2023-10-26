@@ -1,7 +1,9 @@
 package exerciseList1.questao2;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Objects;
+import java.util.List;
 
 public class Aluno {
     private String name;
@@ -12,16 +14,16 @@ public class Aluno {
     public void getInClass(Turma newClass){
         if(!this.classList.contains(newClass)){
             this.classList.add(newClass);
+            newClass.addStudent(this);
         }
     }
     public String getName() {
         return name;
     }
 
-    public ArrayList<Turma> getClassList() {
-        return classList;
+    public List<Turma> getClassList() {
+        return Collections.unmodifiableList(this.classList);
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

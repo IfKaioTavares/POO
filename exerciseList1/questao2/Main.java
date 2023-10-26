@@ -2,7 +2,7 @@ package exerciseList1.questao2;
 
 public class Main {
     public static void main(String[] args) {
-        Escola e1 = new Escola("Montessori", "1");
+        Escola e1 = new Escola("Montessori");
         Turma t1 = new Turma("Quimica 1ano");
         Turma t2 = new Turma("Fisica 1ano");
         e1.addClass(t1);
