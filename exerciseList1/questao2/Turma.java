@@ -1,6 +1,8 @@
 package exerciseList1.questao2;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Objects;
 
 public class Turma {
@@ -26,11 +28,11 @@ public class Turma {
     public String getName() {
         return name;
     }
-    public ArrayList<Aluno> getStudentsList() {
-        return studentsList;
+    public List<Aluno> getStudentsList() {
+        return Collections.unmodifiableList(studentsList);
     }
-    public ArrayList<Professor> getTeachersList() {
-        return teachersList;
+    public List<Professor> getTeachersList() {
+        return Collections.unmodifiableList(teachersList);
     }
     @Override
     public boolean equals(Object o) {
