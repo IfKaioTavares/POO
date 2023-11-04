@@ -16,7 +16,7 @@ public class Reserva {
     }
 
     public double pricePerNight(){
-
+        return 2.5;
     }
 
 }
