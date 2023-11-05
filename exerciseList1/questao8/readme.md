@@ -1,0 +1,2 @@
+Gestão de uma Clínica Médica:
+Desenvolva um sistema para gerenciar uma clínica médica. A clínica tem vários médicos, cada um com informações pessoais e especialidades médicas. Os pacientes podem marcar consultas com médicos para datas específicas. Os médicos mantêm um registro de consultas passadas e futuras com os pacientes. Implemente funcionalidades para visualizar as consultas de um paciente, a disponibilidade de um médico e os detalhes de uma consulta agendada
