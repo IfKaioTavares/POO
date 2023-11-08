@@ -1,0 +1,2 @@
+Gestão de Estoque de uma Mercearia:
+Desenvolva um sistema para gerenciar o estoque de uma mercearia. A mercearia possui diferentes produtos, como alimentos, bebidas e produtos de higiene. Cada produto tem informações como nome, preço, quantidade disponível em estoque e data de validade. Os clientes podem adicionar produtos ao carrinho de compras e efetuar compras. O sistema deve atualizar o estoque de produtos após cada compra.
