@@ -3,6 +3,7 @@ package prova;
 import java.util.ArrayList;
 import java.util.List;
 
+import prova.enums.Status;
 import prova.model.Cliente;
 import prova.model.Equipamento;
 import prova.model.OrdemServico;
@@ -26,10 +27,8 @@ public class Main {
     public List<OrdemServico> ordemServicoEquipamento(Cliente cliente, Equipamento equipamento){
         ArrayList<OrdemServico> osEquipamento = new ArrayList<>();
         for(OrdemServico os: this.ordensServico){
-            if(os.getCliente().equals(cliente)){
-                if(os.getEquipamento().equals(equipamento)){
-                    osEquipamento.add(os);
-                }
+            if(os.getCliente().equals(cliente) && os.getStatus().equals(Status.EM_ANDAMENTO) && os.getEquipamento().equals(equipamento)){
+                osEquipamento.add(os);
             }
         }
         return List.copyOf(osEquipamento);
@@ -38,10 +37,8 @@ public class Main {
     public List<OrdemServico> ordemServicoTecnico(Cliente cliente, Tecnico tecnico){
         ArrayList<OrdemServico> osTecnico = new ArrayList<>();
         for(OrdemServico os: this.ordensServico){
-            if(os.getCliente().equals(cliente)){
-                if(os.getTecnico().equals(tecnico)){
-                    osTecnico.add(os);
-                }
+            if(os.getCliente().equals(cliente) && os.getStatus().equals(Status.EM_ANDAMENTO) && os.getTecnico().equals(tecnico)){
+                osTecnico.add(os);
             }
         }
         return List.copyOf(osTecnico);

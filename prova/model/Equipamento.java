@@ -23,4 +23,12 @@ public class Equipamento {
     public int hashCode() {
         return Objects.hash(nome, codigo);
     }
+
+    @Override
+    public String toString() {
+        return "Equipamento{" +
+                "nome='" + nome + '\'' +
+                ", codigo='" + codigo + '\'' +
+                '}';
+    }
 }

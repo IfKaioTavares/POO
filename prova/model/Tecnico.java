@@ -24,4 +24,12 @@ public class Tecnico {
     public int hashCode() {
         return Objects.hash(nome, telefone);
     }
+
+    @Override
+    public String toString() {
+        return "Tecnico{" +
+                "nome='" + nome + '\'' +
+                ", telefone='" + telefone + '\'' +
+                '}';
+    }
 }

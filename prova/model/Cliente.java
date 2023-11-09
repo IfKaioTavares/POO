@@ -27,4 +27,12 @@ public class Cliente {
     public int hashCode() {
         return Objects.hash(nome, telefone);
     }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "nome='" + nome + '\'' +
+                ", telefone='" + telefone + '\'' +
+                '}';
+    }
 }
