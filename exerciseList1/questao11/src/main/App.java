@@ -1,7 +1,5 @@
 package exerciseList1.questao11.src.main;
-
 import java.time.LocalDate;
-
 import exerciseList1.questao11.src.enums.GeneroProduto;
 import exerciseList1.questao11.src.model.Carrinho;
 import exerciseList1.questao11.src.model.Estoque;

@@ -1,0 +1,1 @@
+Modele um sistema simplificado de mídia social. Os usuários podem criar perfis, publicar mensagens e adicionar amigos. Cada mensagem pode conter texto e imagens. Os usuários podem comentar nas mensagens de seus amigos. Implemente funcionalidades para listar as mensagens de um usuário, exibir os comentários em uma mensagem e mostrar os amigos de um usuário.
